@@ -1,0 +1,66 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>org.openrefine.extensions</groupId>
+  <artifactId>refine-spark</artifactId>
+  <packaging>pom</packaging>
+  <version>0.1-SNAPSHOT</version>
+
+  <name>Apache Spark integration for OpenRefine</name>
+  <description>OpenRefine runner based on Spark and accompanying extension</description>
+  <url>http://openrefine.org/</url>
+  <inceptionYear>2020</inceptionYear>
+  <organization>
+    <name>OpenRefine contributors</name>
+    <url>https://openrefine.org</url>
+  </organization>
+  <licenses>
+    <license>
+      <name>BSD-3-Clause</name>
+      <url>https://raw.githubusercontent.com/OpenRefine/spark-extension/main/LICENSE.txt</url>
+      <distribution>repo</distribution>
+    </license>
+  </licenses>
+
+  <modules>
+    <module>refine-spark-runner</module>
+    <module>spark-extension</module>
+  </modules>
+
+  <properties>
+    <!-- Java version -->
+    <java.minversion>11</java.minversion>
+    <java.maxversion>17</java.maxversion>    
+
+    <!-- dependencies -->
+    <openrefine.version>4.0-SNAPSHOT</openrefine.version>
+    <spark.version>3.2.0</spark.version>
+    <testng.version>7.7.1</testng.version>
+    <servlet-api.version>4.0.1</servlet-api.version>
+    <jackson.version>2.12.3</jackson.version> <!-- to match Spark's dependencies -->
+    <commons-lang3.version>3.12.0</commons-lang3.version>
+    <mockito.version>5.3.1</mockito.version>
+
+    <!-- plugin versions -->
+    <surefire.version>3.0.0</surefire.version>
+    <maven-dependency-plugin.version>3.5.0</maven-dependency-plugin.version>
+    <maven-compiler-plugin.version>3.10.1</maven-compiler-plugin.version>
+  </properties>
+
+  <!-- enabled to access our snapshots of OpenRefine -->
+  <repositories>
+    <repository>
+      <id>snapshots</id>
+      <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
+      <releases>
+        <enabled>false</enabled>
+      </releases>
+      <snapshots>
+        <enabled>true</enabled>
+      </snapshots>
+    </repository>
+  </repositories>
+
+</project>
+
